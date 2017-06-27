@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameEngine.cs" />
-    <Compile Include="GameManager.cs" />
-    <Compile Include="GameVisualizer.cs" />
+    <Compile Include="Game\GameEngine.cs" />
+    <Compile Include="Game\GameManager.cs" />
+    <Compile Include="Game\GameVisualizer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

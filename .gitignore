@@ -301,3 +301,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Properties/AssemblyInfo.cs
+/Properties/AssemblyInfo.cs
