@@ -17,7 +17,7 @@ namespace Hangman {
         public void outputWord(List<char> word) {
             Console.Write(Environment.NewLine + "Word: ");
             foreach (char letter in word) {
-                Console.Write(letter);
+                Console.Write(letter + " ");
             }
         }
 
