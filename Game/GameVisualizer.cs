@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Hangman {
     class GameVisualizer {
+
+        /// <summary>
+        /// Ouytputs the welcome message
+        /// </summary>
         public void outputWelcome() {
             Console.Clear();
             Console.WriteLine("Welcome to Hangman!");
@@ -14,6 +18,10 @@ namespace Hangman {
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Outputs a word
+        /// </summary>
+        /// <param name="word">A list of chars that make up a word</param>
         public void outputWord(List<char> word) {
             Console.Write(Environment.NewLine + "Word: ");
             foreach (char letter in word) {
@@ -21,6 +29,9 @@ namespace Hangman {
             }
         }
 
+        /// <summary>
+        /// Outputs the incorrect guesses the users made
+        /// </summary>
         public void outputGuessedLetters() {
             Console.Write(Environment.NewLine + "Incorrect Guesses: ");
             foreach (char letter in Program.incorrectPlayerGuesses) {
@@ -29,6 +40,9 @@ namespace Hangman {
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Outputs the losing message
+        /// </summary>
         public void outputLoseMessage() {
             Console.Clear();
             Console.WriteLine("You're out of guesses! You Lose!" + Environment.NewLine);
@@ -42,6 +56,9 @@ namespace Hangman {
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// Outputs the winning message
+        /// </summary>
         public void outputWinMessage() {
             Console.Clear();
             Console.WriteLine(Environment.NewLine + "Congratulations! You Win!");
