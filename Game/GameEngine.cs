@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 
 namespace Hangman {
-    class GameEngine {
+    public class GameEngine {
 
         /// <summary>
         /// Validates whether or not the guess is valid.

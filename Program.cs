@@ -21,21 +21,21 @@ namespace Hangman {
         static void Main(string[] args) {
 
             // Initalising instances of the game classes
-            GameManager _gameManager = new GameManager();
-            GameEngine _gameEngine = new GameEngine();
-            GameVisualizer _gameVisualizer = new GameVisualizer();
+            GameManager gameManager = new GameManager();
+            GameEngine gameEngine = new GameEngine();
+            GameVisualizer gameVisualizer = new GameVisualizer();
 
-            _gameVisualizer.outputWelcome(); // Displays the welcome message
+            gameVisualizer.outputWelcome(); // Displays the welcome message
 
-            _gameManager.newGame(); // Creates a new Hangman Game
+            gameManager.newGame(); // Creates a new Hangman Game
 
             while (guessedWord.Contains('_')) { // Loops while there are still letters to guess
                 Console.Clear(); // Clears the console
-                _gameVisualizer.outputWord(guessedWord); // Outputs the word the user needs to guess
-                _gameVisualizer.outputGuessedLetters(); // Outputs the incorrect letters the users guessed
+                gameVisualizer.outputWord(guessedWord); // Outputs the word the user needs to guess
+                gameVisualizer.outputGuessedLetters(); // Outputs the incorrect letters the users guessed
                 Console.WriteLine(Environment.NewLine + "Enter a guess"); // Prompts user to enter a guess
                 String playerGuess = Console.ReadLine().ToUpper();
-                if (_gameEngine.validateGuess(playerGuess)) { // Validates the guess is a single letter and alphabetical
+                if (gameEngine.validateGuess(playerGuess)) { // Validates the guess is a single letter and alphabetical
                     char guess = Convert.ToChar(playerGuess);
                     if (!playerGuesses.Contains(guess)) { // Checks to see if the letter has been guessed before
                         if (gameWord.Contains(guess)) { // Checks to see if the word contains the letter
@@ -50,7 +50,7 @@ namespace Hangman {
                             incorrectPlayerGuesses.Add(guess); // Adds to the list of incorrect guesses
                             incorrectGuesses++; // Increments the amount of incorrect guesses the user has done
                             if (incorrectGuesses >= 6) { // If the user has had 6 or more incorrect guesses, they lose.
-                                _gameVisualizer.outputLoseMessage();
+                                gameVisualizer.outputLoseMessage();
                             }
                         }
                     } else {
@@ -61,7 +61,7 @@ namespace Hangman {
                 }
             }
 
-            _gameVisualizer.outputWinMessage(); // Outputs the win message
+            gameVisualizer.outputWinMessage(); // Outputs the win message
         }
     }
 }
